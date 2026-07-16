@@ -17,7 +17,7 @@ const P = {
   scienceCtr:  {name:"Sapporo Science Center", ll:[43.0393,141.4715]},
   fantasyKids:  {name:"Fantasy Kids Resort (Sunpiazza)", ll:[43.0388,141.4726]},
   toriton:      {name:"Toriton Sushi Toyohira", ll:[43.0506,141.3721]},
-  ramen:        {name:"Ebisoba Ichigen (Minami7 Nishi9)", ll:[43.0513,141.3454]},
+  ramen:        {name:"えびそば一幻 総本店 (Minami7 Nishi9)", ll:[43.0513,141.3454]},
   soupcurry:    {name:"Soup Curry Garaku (Minami3 Johigashi)", ll:[43.0561,141.3572]},
   airport:      {name:"New Chitose Airport", ll:[42.7752,141.6923]},
   tvTower:      {name:"Boarding point (behind TV Tower, across from koban)", ll:[43.0608,141.3572]},
@@ -67,21 +67,22 @@ const DAYS = [
   ]
 },
 {
-  key:"d2", tab:"Jul 28 Tue", sub:"Zoo + Garaku",
-  emoji:"🦁", date:new Date(2026,6,28), blurb:"Garaku open run lunch, then zoo + Hokkaido Shrine",
+  key:"d2", tab:"Jul 28 Tue", sub:"Ebisoba + Zoo",
+  emoji:"🦁", date:new Date(2026,6,28), blurb:"Ebisoba Ichigen open run lunch, then zoo + Hokkaido Shrine",
   title:"Day 2 · Zoo day",
-  note:"Garaku open run for lunch first — queue before it opens, then head to the zoo in the afternoon. Shaded break at Hokkaido Shrine before dinner at Toriton.",
+  note:"Ebisoba Ichigen open run first — 16 counter seats only, queue before 11 AM. Cash only. Then zoo in the afternoon and Hokkaido Shrine before Toriton dinner.",
   stops:[
-    {p:"hotel", time:"9:30 AM", label:"Leave hotel"},
-    {p:"soupcurry", time:"11:00 AM–12:30 PM", label:"Soup Curry Garaku (open run · lunch)", desc:"Priority pick · queue ~10:45 AM before doors open at 11:00 AM · Minami3 Jo-Higashi · lunch hours 11:00 AM – 3:30 PM", legs:[
-      {mode:"subway", line:"Sapporo Sta. (Namboku Line) → Odori Sta. (~4 min)"},
-      {mode:"walk", line:"Walk (~8 min)"}
+    {p:"hotel", time:"10:15 AM", label:"Leave hotel"},
+    {p:"ramen", time:"11:00 AM–12:00 PM", label:"Ebisoba Ichigen 総本店 (open run · lunch)", desc:"Priority pick · shrimp ramen · queue ~10:40 AM, opens 11:00 AM · 16 counter seats only — arrive early · Cash only · Minami7 Nishi9", legs:[
+      {mode:"subway", line:"Sapporo Sta. (Namboku Line) → Nakajima-koen Sta. (~8 min)"},
+      {mode:"walk", line:"Walk from Exit 2 (~15 min)"}
     ]},
-    {p:"maruyamaZoo", time:"1:00–3:00 PM", label:"Maruyama Zoo", desc:"Easy relaxed afternoon pace", legs:[
-      {mode:"subway", line:"Odori Sta. (Tozai Line) → Maruyama-koen Sta. (~8 min)"},
-      {mode:"bus", line:"JR Hokkaido Bus [円15]/[円16] Zoo Line, board at Maruyama Bus Terminal platform 4 → Zoo West Gate (~5 min, ¥210/¥110)"}
+    {p:"maruyamaZoo", time:"12:30–2:30 PM", label:"Maruyama Zoo", desc:"Easy relaxed afternoon pace", legs:[
+      {mode:"walk", line:"Walk back to Nakajima-koen Sta. (~15 min)"},
+      {mode:"subway", line:"Nakajima-koen Sta. (Namboku Line) → Odori Sta. → transfer to Tozai Line → Maruyama-koen Sta. (~15 min)"},
+      {mode:"bus", line:"JR Hokkaido Bus [円15]/[円16] Zoo Line → Zoo West Gate (~5 min, ¥210/¥110)"}
     ]},
-    {p:"hokkaidoJingu", time:"~3:15–4:30 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", mode:"walk"},
+    {p:"hokkaidoJingu", time:"~2:45–4:00 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", mode:"walk"},
     {p:"toriton", time:"6:30–7:30 PM", label:"Toriton Sushi Toyohira", desc:"Priority pick · conveyor-belt sushi, fun for a 5-year-old · no reservations taken (walk-in only)", legs:[
       {mode:"walk", line:"Walk back to Maruyama-koen Sta. (~7 min)"},
       {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → transfer to Toho Line at Odori Sta. → Gakuen-mae Sta. (~20 min)"},
