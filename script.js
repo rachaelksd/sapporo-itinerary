@@ -112,10 +112,10 @@ const DAYS = [
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
   emoji:"🛍️", date:new Date(2026,6,30), blurb:"Fantasy Kids Resort, then every boutique",
   title:"Day 4 · Menya Saimi + AOAO morning, then full shopping day",
-  note:"Genuine open-run at Menya Saimi — arrive before opening and queue, since by 11AM a line has usually already formed anyway. Orders are taken while queueing, so seating-to-food is fast. This removes the lunch wait as a schedule risk and pulls the whole rest of the day ~30 min earlier. Then AOAO as an indoor cool-down before the shopping crawl. Indoor AC break at Donguri Bakery Odori roughly halfway through the crawl, during the hottest part of the afternoon.",
+  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl.",
   stops:[
     {p:"hotel", time:"10:05 AM", label:"Leave hotel"},
-    {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:"Priority pick · miso ramen, Toyohira-ku · Cash only · Queue by ~10:30, order taken while waiting · shop opens 11:00 officially but often opens early (10:45 weekdays / 10:30 weekends) once a line forms · bring water/shade for the queue · lunch-only hours (closes 3:15 PM) · Plan B if the wait gets too long for the kiddo: 春一家 三代目 麺宿 (Haruichiya Sandaime Menjuku, 4.3★/735 reviews, miso ramen, literally across the street) or ごまそば遊鶴 美園店 (Gomasoba Yuzuru Misono, 4.1★/125 reviews, soba/rice-bowl sets, ~10 min walk, usually no wait)", mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
+    {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:"Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM · If the line is still too long: ① Haruichiya Sandaime Menjuku — across the street, 4.3★/735 reviews, miso ramen ② Gomasoba Yuzuru Misono — ~10 min walk, 4.1★/125 reviews, soba + rice-bowl sets", mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
     {p:"aoao", time:"11:45 AM–12:45 PM", label:"AOAO SAPPORO", desc:"Fully indoor & air-conditioned — a cool-down break before the shopping crawl", legs:[
       {mode:"subway", line:"Misono Sta. (Toho Line) → direct, no transfer → Odori Sta. (~18 min)"},
       {mode:"walk", line:"Walk (~3 min)"}
