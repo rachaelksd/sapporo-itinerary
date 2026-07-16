@@ -65,7 +65,7 @@ const DAYS = [
       {mode:"jr", line:"New Chitose Airport → Sapporo Sta. (JR Rapid Airport, ~40 min)"},
       {mode:"walk", line:"Walk (~8 min)"}
     ]},
-    {p:"stellar", time:"~3:30–4:30 PM", label:"Shopping: Stellar Place", desc:"Shiki Marche, MARKEY'S, Bshop, ADAM ET ROPE · 2 min walk from hotel", mode:"walk"},
+    {p:"stellar", time:"~3:30–4:30 PM", label:"Shopping: Stellar Place", desc:"Shiki Marche, MARKEY'S, Bshop · 2 min walk from hotel", mode:"walk"},
     {p:"northman", time:"~4:30–4:45 PM", label:"Northman 大丸札幌店", desc:"Hokkaido classic pie + red bean + Nama Northman (fresh cream) — only at Daimaru Sapporo · Daimaru B1F, 3 min walk from Stellar Place · 10:00–20:00", mode:"walk"},
     {p:"kapital", time:"~5:00–5:45 PM", label:"Kapital", desc:"Minami2 Nishi1 · ~14 min walk south from Daimaru", mode:"walk"},
     {p:"jingiskan", time:"7:00 PM", label:"Aratanaru Bonz Susukino (Genghis Khan BBQ)", desc:"Reservation confirmed · ~5 min walk from Kapital", mode:"walk"},
@@ -76,7 +76,7 @@ const DAYS = [
   key:"d2", tab:"Jul 28 Tue", sub:"Ebisoba + Zoo",
   emoji:"🦁", date:new Date(2026,6,28), blurb:"Ebisoba Ichigen open run lunch, then zoo + Hokkaido Shrine",
   title:"Day 2 · Zoo day",
-  note:"Ebisoba Ichigen open run first — 16 counter seats only, queue before 11 AM. Cash only. Then zoo in the afternoon and Hokkaido Shrine before Toriton dinner.",
+  note:"Ebisoba Ichigen open run first — 16 counter seats only, cash only, queue before 11 AM. Zoo + Hokkaido Shrine in the afternoon, then back to hotel to rest. Toriton for dinner (walk-in, arrive early to beat the queue). ⚠️ Tomorrow's lavender tour boards at 7:15 AM — aim for lights out by 10 PM.",
   stops:[
     {p:"hotel", time:"10:15 AM", label:"Leave hotel"},
     {p:"ramen", time:"11:00 AM–12:00 PM", label:"Ebisoba Ichigen 総本店 (open run · lunch)", desc:"Priority pick · shrimp ramen · queue ~10:40 AM, opens 11:00 AM · 16 counter seats only — arrive early · Cash only · Minami7 Nishi9", legs:[
@@ -89,14 +89,20 @@ const DAYS = [
       {mode:"bus", line:"JR Hokkaido Bus [円15]/[円16] Zoo Line → Zoo West Gate (~5 min, ¥210/¥110)"}
     ]},
     {p:"hokkaidoJingu", time:"~2:45–4:00 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", mode:"walk"},
-    {p:"toriton", time:"6:30–7:30 PM", label:"Toriton Sushi Toyohira", desc:"Priority pick · conveyor-belt sushi, fun for a 5-year-old · no reservations taken (walk-in only)", legs:[
+    {p:"hotel", time:"~4:30 PM", label:"Return to hotel — rest", desc:"Recharge before dinner · tomorrow is the lavender tour — board 7:15 AM, so aim for an early night", legs:[
       {mode:"walk", line:"Walk back to Maruyama-koen Sta. (~7 min)"},
-      {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → transfer to Toho Line at Odori Sta. → Gakuen-mae Sta. (~20 min)"},
+      {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → Odori Sta. → Namboku Line → Sapporo Sta. (~15 min)"},
+      {mode:"walk", line:"Walk (~8 min)"}
+    ]},
+    {p:"toriton", time:"6:15–7:30 PM", label:"Toriton Sushi Toyohira", desc:"Priority pick · conveyor-belt sushi, fun for a 5-year-old · walk-in only — arrive by 6:15 to get in the queue before it builds · no reservations taken", legs:[
+      {mode:"walk", line:"Walk (~2 min) to Sapporo Sta."},
+      {mode:"subway", line:"Sapporo Sta. (Toho Line) → Gakuen-mae Sta. (~12 min)"},
       {mode:"walk", line:"Walk (~5 min)"}
     ]},
-    {p:"hotel", time:"~7:50 PM", label:"Back to hotel", desc:"~15 min", legs:[
+    {p:"hotel", time:"~7:50 PM", label:"Back to hotel", desc:"Early night — tomorrow's tour bus boards at 7:15 AM", legs:[
       {mode:"walk", line:"Walk (~5 min) to Gakuen-mae Sta."},
-      {mode:"subway", line:"Gakuen-mae Sta. (Toho Line) → transfer to Namboku Line at Odori Sta. → Sapporo Sta. (~15 min)"}
+      {mode:"subway", line:"Gakuen-mae Sta. (Toho Line) → Sapporo Sta. (~12 min)"},
+      {mode:"walk", line:"Walk (~8 min)"}
     ]}
   ]
 },
@@ -125,7 +131,7 @@ const DAYS = [
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
   emoji:"🛍️", date:new Date(2026,6,30), blurb:"Stellar · Rokkatei · SAMURAI lunch · AOAO · full crawl · Kagari",
   title:"Day 4 · Full shopping day + Kagari dinner",
-  note:"Morning: Stellar Place, Kitakaro, Rokkatei 本店. Lunch: SAMURAI soup curry (opens noon, walk-in only). Afternoon cool-down at AOAO, then coffee at Mermaid before the boutique crawl. KINOTOYA BAKE for the midpoint underground AC break. Dinner: Kagari robatayaki (reservation 6:30 PM).",
+  note:"Morning: Stellar, Kitakaro, Rokkatei. Lunch: SAMURAI (noon, walk-in). Post-lunch cool-down at AOAO, then coffee at Mermaid before the boutique crawl. KINOTOYA BAKE for the underground AC break midway. ⚠️ Kagari reservation is firm at 6:30 PM — if the crawl runs late, MaW onward are if-time-allows; leave Moonrise by 6:10 PM at the latest.",
   stops:[
     {p:"hotel", time:"10:00 AM", label:"Leave hotel"},
     {p:"stellar", time:"10:15–11:00 AM", label:"Stellar Place: Shiki Marche, MARKEY'S, Bshop", desc:"2 min walk from hotel", mode:"walk"},
@@ -133,20 +139,20 @@ const DAYS = [
     {p:"kitakaroDaimaru", time:"11:15–11:30 AM", label:"Snack: Kitakaro (Daimaru Sapporo B1F)", desc:"Priority pick · pastries/soft-serve · ~3 min walk from Stellar Place", mode:"walk"},
     {p:"rokkatei", time:"11:35 AM–12:05 PM", label:"六花亭 札幌本店", desc:"Hokkaido sweets flagship · Marusei Butter Sand, seasonal cakes, café on upper floors · Kita4 Nishi6 · ~5 min walk west from Daimaru · shop 10:00–17:30", mode:"walk"},
     {p:"rojiuraCurry", time:"12:20–1:20 PM", label:"Rojiura Curry SAMURAI Sakura (lunch)", desc:"Priority pick · soup curry · walk-in only · Tiara36 2F, Minami3 Nishi6 · opens 12:00, L.O. 15:00 · Cash + PayPay", legs:[
-      {mode:"walk", line:"Walk south on Nishi6-dori (~15 min straight down from Rokkatei)"}
+      {mode:"walk", line:"Walk south on Nishi6-dori (~12 min straight down from Rokkatei)"}
     ]},
     {p:"aoao", time:"1:35–2:30 PM", label:"AOAO SAPPORO", desc:"Fully indoor & air-conditioned — post-lunch cool-down · ~5 min walk east from SAMURAI", mode:"walk"},
     {p:"mermaidCoffee", time:"2:35–2:55 PM", label:"Mermaid Coffee Roasters", desc:"Coffee + sit-down · Tanukikoji Block 1 (Minami3 Nishi1) · ~8 min walk from AOAO · open 8:00–18:00", mode:"walk"},
-    {p:"kapital", time:"3:00–3:15 PM", label:"Kapital", desc:"Minami2 Nishi1 · 1 block north from Mermaid (~2 min walk)", mode:"walk"},
+    {p:"kapital", time:"3:00–3:20 PM", label:"Kapital", desc:"Minami2 Nishi1 · 1 block north from Mermaid (~2 min walk) · also visited Monday — if fully covered there, jump straight to BEAMS", mode:"walk"},
     {p:"beams", time:"3:20–3:35 PM", label:"BEAMS Sapporo", desc:"Minami1 Nishi3 · ~4 min walk", mode:"walk"},
     {p:"unitedArrows", time:"3:37–3:52 PM", label:"UNITED ARROWS Sapporo", desc:"Sapporo PARCO, right next to BEAMS · ~2 min walk", mode:"walk"},
     {p:"modest", time:"3:54–4:09 PM", label:"Modest", desc:"Minami2 Nishi3 · ~2 min walk", mode:"walk"},
     {p:"humanmade", time:"4:11–4:26 PM", label:"Human Made Sapporo", desc:"THE KNOT Sapporo, one block south · ~2 min walk", mode:"walk"},
     {p:"kinotoyaBake", time:"4:28–4:48 PM", label:"AC break: KINOTOYA BAKE ポールタウン店", desc:"Underground Pole Town — fully air-conditioned · freshly baked cheese tart + soft cream · Minami2 Nishi3 · ~2 min walk", mode:"walk"},
-    {p:"maw", time:"4:50–5:05 PM", label:"MaW", desc:"Minami2 Nishi5, continuing west · ~4 min walk", mode:"walk"},
-    {p:"thread", time:"5:09–5:24 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
-    {p:"garage69", time:"5:25–5:40 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
-    {p:"moonrise", time:"5:40–5:55 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
+    {p:"maw", time:"4:50–5:05 PM", label:"MaW (if time allows)", desc:"Minami2 Nishi5, continuing west · ~4 min walk · skip here if running behind — Kagari is at 6:30", mode:"walk"},
+    {p:"thread", time:"5:09–5:24 PM", label:"thread (if time allows)", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
+    {p:"garage69", time:"5:25–5:40 PM", label:"GARAGE69 (if time allows)", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
+    {p:"moonrise", time:"5:40–5:55 PM", label:"Moonrise (if time allows)", desc:"Same building as GARAGE69 · leave by 6:10 PM latest to reach Kagari on time", mode:"walk"},
     {p:"robatayaki", time:"6:30–8:00 PM", label:"北海道炉端焼き 篝 Kagari", desc:"Reservation confirmed · 6:30 PM · Minami5 Nishi5, LC6番館 4F · Susukino Station 3 min walk · ~12 min walk south from Moonrise", mode:"walk"},
     {p:"hotel", time:"~8:15 PM", label:"Back to hotel", desc:"~10 min walk north", mode:"walk"}
   ]
