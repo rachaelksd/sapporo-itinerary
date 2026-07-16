@@ -124,7 +124,7 @@ const DAYS = [
   note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl. Dinner near hotel — TBD.",
   stops:[
     {p:"hotel", time:"10:05 AM", label:"Leave hotel"},
-    {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:"Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM · If the line is still too long: ① Haruichiya Sandaime Menjuku — across the street, 4.3★/735 reviews, miso ramen ② Gomasoba Yuzuru Misono — ~10 min walk, 4.1★/125 reviews, soba + rice-bowl sets", mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
+    {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:`Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM<br><span style="display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:#8a6a2e;letter-spacing:.02em;">PLAN B (if line is too long)</span><br>① <a href="https://www.google.com/maps/search/?api=1&query=Haruichiya+Sandaime+Menjuku+Sapporo+Misono" target="_blank" rel="noopener">Haruichiya Sandaime Menjuku</a> — across the street · 4.3★/735 reviews · miso ramen<br>② <a href="https://www.google.com/maps/search/?api=1&query=Gomasoba+Yuzuru+Misono+Sapporo" target="_blank" rel="noopener">Gomasoba Yuzuru Misono</a> — ~10 min walk · 4.1★/125 reviews · soba + rice-bowl sets`, mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
     {p:"aoao", time:"11:45 AM–12:45 PM", label:"AOAO SAPPORO", desc:"Fully indoor & air-conditioned — a cool-down break before the shopping crawl", legs:[
       {mode:"subway", line:"Misono Sta. (Toho Line) → direct, no transfer → Odori Sta. (~18 min)"},
       {mode:"walk", line:"Walk (~3 min)"}
@@ -340,7 +340,7 @@ function renderPanel(day){
   highlightedIdx = -1;
   const panel = document.getElementById('panel');
   const modeLabels = {walk:"Walk",subway:"Subway",bus:"Bus",jr:"JR",tour:"Tour",optional:"Optional"};
-  let html = `<div class="day-title"><h2>${day.title}</h2><span class="badge">${day.tab}</span></div>`;
+  let html = `<div class="day-title"><h2>${day.title}</h2></div>`;
   html += `<div class="day-note">${day.note}</div>`;
   day.stops.forEach((s,i)=>{
     const cat = getCategory(s.p);
@@ -399,19 +399,6 @@ DAYS.forEach((d,i)=>{
   nav.appendChild(btn);
 });
 
-// Swipe navigation on the schedule panel (not the map, so map dragging isn't hijacked)
-const panelEl = document.getElementById('panel');
-let touchStartX = null;
-panelEl.addEventListener('touchstart', (e)=>{ touchStartX = e.touches[0].clientX; }, {passive:true});
-panelEl.addEventListener('touchend', (e)=>{
-  if(touchStartX===null) return;
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  if(Math.abs(dx) > 60){
-    if(dx < 0 && currentDayIdx < DAYS.length-1) selectDay(currentDayIdx+1);
-    else if(dx > 0 && currentDayIdx > 0) selectDay(currentDayIdx-1);
-  }
-  touchStartX = null;
-}, {passive:true});
 
 // Auto-select today's date if it falls within the trip window
 const today = new Date();
