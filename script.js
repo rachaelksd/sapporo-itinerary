@@ -32,6 +32,7 @@ const P = {
   iwamizawaSA:  {name:"Iwamizawa Highway rest stop", ll:[43.1948,141.8028]},
   kapital:      {name:"Kapital (Minami2 Nishi1)", ll:[43.0576,141.3548]},
   sushiDon:     {name:"Sushi-Don 札幌海鮮丼専門店 すしどんぶり (Minami3 Nishi5)", ll:[43.0561,141.3514]},
+  robatayaki:   {name:"Robatayaki — Susukino", ll:[43.0540,141.3516]},
   northman:     {name:"Northman 大丸札幌店 (Daimaru Sapporo B1F)", ll:[43.0683,141.3498]},
   kinotoyaBake: {name:"KINOTOYA BAKE ポールタウン店 (Minami2 Nishi3)", ll:[43.0588,141.3530]},
   beams:        {name:"BEAMS Sapporo (Minami1 Nishi3)", ll:[43.0590,141.3532]},
@@ -122,7 +123,7 @@ const DAYS = [
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
   emoji:"🛍️", date:new Date(2026,6,30), blurb:"Stellar + Kitakaro, AOAO, SAMURAI lunch, full boutique crawl",
   title:"Day 4 · SAMURAI lunch + full shopping day",
-  note:"Start at Stellar Place and grab Kitakaro at Daimaru, then cool down at AOAO. Rojiura Curry SAMURAI for lunch (opens noon, walk-in only). Full boutique crawl in the afternoon — KINOTOYA BAKE underground Pole Town for the midpoint AC break. Dinner at Sushi-Don (reservation 6 PM).",
+  note:"Start at Stellar Place and grab Kitakaro at Daimaru, then cool down at AOAO. Rojiura Curry SAMURAI for lunch (opens noon, walk-in only). Full boutique crawl in the afternoon — KINOTOYA BAKE underground Pole Town for the midpoint AC break. Robatayaki dinner (reservation 6:30 PM).",
   stops:[
     {p:"hotel", time:"10:00 AM", label:"Leave hotel"},
     {p:"stellar", time:"10:15–11:30 AM", label:"Stellar Place: Shiki Marche, MARKEY'S, Bshop", desc:"~25 min each · 2 min walk from hotel", mode:"walk"},
@@ -143,8 +144,8 @@ const DAYS = [
     {p:"thread", time:"4:59–5:14 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
     {p:"garage69", time:"5:15–5:30 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
     {p:"moonrise", time:"5:30–5:45 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
-    {p:"sushiDon", time:"6:00–7:30 PM", label:"Sushi-Don すしどんぶり", desc:"Reservation confirmed · Karakusa Hotel 1F, Minami3 Nishi5 · Tanukikoji side entrance · kaisendon (seafood rice bowl) · ~3 min walk east from Moonrise", mode:"walk"},
-    {p:"hotel", time:"~7:45 PM", label:"Back to hotel", desc:"~10 min walk north (≈750m)", mode:"walk"}
+    {p:"robatayaki", time:"6:30–8:00 PM", label:"Robatayaki dinner", desc:"Reservation confirmed · 6:30 PM · Susukino area · ~10 min walk south from Moonrise", mode:"walk"},
+    {p:"hotel", time:"~8:15 PM", label:"Back to hotel", desc:"~10 min walk north", mode:"walk"}
   ]
 },
 {
@@ -175,7 +176,7 @@ const modeColor = {walk:"#4f6b58", subway:"#5c4d8a", bus:"#5c4d8a", jr:"#5c4d8a"
 const CATEGORY = {
   hotel:"hotel",
   jingiskan:"meal", toriton:"meal", ramen:"meal", soupcurry:"meal", junpei:"meal",
-  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", sushiDon:"meal",
+  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", sushiDon:"meal", robatayaki:"meal",
   northman:"break", kinotoyaBake:"break",
   airport:"flight",
   aoao:"kid", maruyamaZoo:"kid", shiroiKoibito:"kid", scienceCtr:"kid", fantasyKids:"kid",
