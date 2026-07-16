@@ -31,6 +31,7 @@ const P = {
   farmTomita:   {name:"Farm Tomita", ll:[43.4189,142.4270]},
   iwamizawaSA:  {name:"Iwamizawa Highway rest stop", ll:[43.1948,141.8028]},
   kapital:      {name:"Kapital (Minami2 Nishi1)", ll:[43.0576,141.3548]},
+  tbdDinner:    {name:"Dinner near hotel (TBD)", ll:[43.0640,141.3542]},
   beams:        {name:"BEAMS Sapporo (Minami1 Nishi3)", ll:[43.0590,141.3532]},
   unitedArrows: {name:"UNITED ARROWS Sapporo (PARCO)", ll:[43.0592,141.3534]},
   modest:       {name:"Modest (Minami2 Nishi3)", ll:[43.0578,141.3536]},
@@ -52,30 +53,38 @@ const DAYS = [
   key:"d1", tab:"Jul 27 Mon", sub:"Arrival",
   emoji:"🍖", date:new Date(2026,6,27), blurb:"Land, check in, Genghis Khan BBQ dinner",
   title:"Day 1 · Arrival & first dinner",
-  note:"Flight lands 1:25 PM, so the day starts later than a full morning would — nothing planned besides landing, transfer, check-in, and the reserved dinner.",
+  note:"Flight lands 1:25 PM. After check-in there's enough time for a quick shopping run — Stellar Place is steps from the hotel, then south to Kapital before walking to dinner.",
   stops:[
     {p:"airport", time:"1:25 PM", label:"Land — KE765 (ICN→CTS)", desc:"New Chitose Airport, Terminal I (International) · seat 55D"},
     {p:"hotel", time:"~3:00 PM", label:"Hotel check-in", desc:"Just south of Sapporo Station — 8 min walk to Odori, 2 min to the subway", legs:[
       {mode:"jr", line:"New Chitose Airport → Sapporo Sta. (JR Rapid Airport, ~40 min)"},
       {mode:"walk", line:"Walk (~8 min)"}
     ]},
-    {p:"jingiskan", time:"7:00 PM", label:"Aratanaru Bonz Susukino (Genghis Khan BBQ)", desc:"Reservation confirmed · ~13 min walk from hotel (≈855m)", mode:"walk"},
+    {p:"stellar", time:"~3:30–5:00 PM", label:"Shopping: Stellar Place", desc:"Shiki Marche, MARKEY'S, Bshop, ADAM ET ROPE · 2 min walk from hotel · grab Kitakaro pastries at Daimaru B1 on the way", mode:"walk"},
+    {p:"kapital", time:"~5:15–5:45 PM", label:"Kapital (maybe)", desc:"Minami2 Nishi1 · ~14 min walk south from Stellar · skip if tired after the flight", mode:"walk"},
+    {p:"jingiskan", time:"7:00 PM", label:"Aratanaru Bonz Susukino (Genghis Khan BBQ)", desc:"Reservation confirmed · ~5 min walk from Kapital, or ~13 min walk from hotel", mode:"walk"},
     {p:"hotel", time:"~9:00 PM", label:"Back to hotel", desc:"Maybe a short stroll through Tanukikoji if energy allows, then rest", mode:"walk"}
   ]
 },
 {
-  key:"d2", tab:"Jul 28 Tue", sub:"West: Zoo + BIOTOP",
-  emoji:"🦁", date:new Date(2026,6,28), blurb:"Zoo, then BIOTOP lunch — pick one big outing, keep it light",
+  key:"d2", tab:"Jul 28 Tue", sub:"Zoo + Garaku",
+  emoji:"🦁", date:new Date(2026,6,28), blurb:"Zoo morning, open-run Garaku lunch, Hokkaido Shrine",
   title:"Day 2 · Zoo day",
-  note:"Just the zoo and BIOTOP, both right by Maruyama-koen Station. Shaded break at Hokkaido Shrine before heading back out to Toriton for dinner — flexible timing, stay as long as it's working or cut it short for more park time.",
+  note:"Zoo in the morning, then open-run Garaku for lunch — queue right when it opens to beat the crowd. Shaded break at Hokkaido Shrine in the afternoon before heading to Toriton for dinner.",
   stops:[
     {p:"hotel", time:"9:30 AM", label:"Leave hotel"},
-    {p:"maruyamaZoo", time:"10:00–12:00", label:"Maruyama Zoo", desc:"Easy relaxed pace", legs:[
+    {p:"maruyamaZoo", time:"10:00–11:30 AM", label:"Maruyama Zoo", desc:"Easy relaxed pace — leave by 11:30 to make it to Garaku for lunch", legs:[
       {mode:"subway", line:"Sapporo Sta. (Namboku Line) → transfer to Tozai Line at Odori Sta. → Maruyama-koen Sta. (~10 min)"},
       {mode:"bus", line:"JR Hokkaido Bus [円15]/[円16] Zoo Line, board at Maruyama Bus Terminal platform 4 → Zoo West Gate (~5 min, ¥210/¥110)"}
     ]},
-    {p:"biotop", time:"12:15–1:30 PM", label:"Lunch + browse at BIOTOP SAPPORO", desc:"New concept shop + restaurant (KITCHEN bw BIOTOP), ~10 min from the zoo, right by Maruyama Park", mode:"walk"},
-    {p:"hokkaidoJingu", time:"~1:45–3:15 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street (not air-conditioned) · right next to the zoo/BIOTOP area, no extra travel · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", mode:"walk"},
+    {p:"soupcurry", time:"12:00–1:00 PM", label:"Soup Curry Garaku (open run · lunch)", desc:"Priority pick · queue right when lunch opens · Minami3 Jo-Higashi · lunch hours 11:00 AM – 3:30 PM", legs:[
+      {mode:"bus", line:"Zoo West Gate → Maruyama Bus Terminal (~5 min)"},
+      {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → Odori Sta. → walk ~8 min (~20 min total)"}
+    ]},
+    {p:"hokkaidoJingu", time:"~1:30–3:00 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", legs:[
+      {mode:"subway", line:"Odori Sta. (Tozai Line) → Maruyama-koen Sta. (~8 min)"},
+      {mode:"walk", line:"Walk (~7 min)"}
+    ]},
     {p:"toriton", time:"6:30–7:30 PM", label:"Toriton Sushi Toyohira", desc:"Priority pick · conveyor-belt sushi, fun for a 5-year-old · no reservations taken (walk-in only)", legs:[
       {mode:"walk", line:"Walk back to Maruyama-koen Sta. (~7 min)"},
       {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → transfer to Toho Line at Odori Sta. → Gakuen-mae Sta. (~20 min)"},
@@ -112,7 +121,7 @@ const DAYS = [
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
   emoji:"🛍️", date:new Date(2026,6,30), blurb:"Fantasy Kids Resort, then every boutique",
   title:"Day 4 · Menya Saimi + AOAO morning, then full shopping day",
-  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl.",
+  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl. Dinner near hotel — TBD.",
   stops:[
     {p:"hotel", time:"10:05 AM", label:"Leave hotel"},
     {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:"Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM · If the line is still too long: ① Haruichiya Sandaime Menjuku — across the street, 4.3★/735 reviews, miso ramen ② Gomasoba Yuzuru Misono — ~10 min walk, 4.1★/125 reviews, soba + rice-bowl sets", mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
@@ -135,8 +144,8 @@ const DAYS = [
     {p:"thread", time:"4:39–4:54 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
     {p:"garage69", time:"4:55–5:10 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
     {p:"moonrise", time:"5:10–5:25 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
-    {p:"rojiuraCurry", time:"5:27–6:27 PM", label:"Rojiura Curry SAMURAI Sakura", desc:"Priority pick · soup curry, Minami3 Nishi6 · ~2 min walk", mode:"walk"},
-    {p:"hotel", time:"~6:41 PM", label:"Back to hotel", desc:"~14 min walk (≈875m)", mode:"walk"}
+    {p:"tbdDinner", time:"~6:00–7:30 PM", label:"Dinner near hotel (TBD)", desc:"TBD — dinner spot near the hotel to be decided · short walk or taxi from the shopping area", mode:"walk"},
+    {p:"hotel", time:"~7:45 PM", label:"Back to hotel", desc:"Short walk back from dinner", mode:"walk"}
   ]
 },
 {
@@ -167,7 +176,7 @@ const modeColor = {walk:"#4f6b58", subway:"#5c4d8a", bus:"#5c4d8a", jr:"#5c4d8a"
 const CATEGORY = {
   hotel:"hotel",
   jingiskan:"meal", toriton:"meal", ramen:"meal", soupcurry:"meal", junpei:"meal",
-  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal",
+  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", tbdDinner:"meal",
   airport:"flight",
   aoao:"kid", maruyamaZoo:"kid", shiroiKoibito:"kid", scienceCtr:"kid", fantasyKids:"kid",
   stellar:"shopping",
