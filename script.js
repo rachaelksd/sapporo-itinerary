@@ -31,7 +31,7 @@ const P = {
   farmTomita:   {name:"Farm Tomita", ll:[43.4189,142.4270]},
   iwamizawaSA:  {name:"Iwamizawa Highway rest stop", ll:[43.1948,141.8028]},
   kapital:      {name:"Kapital (Minami2 Nishi1)", ll:[43.0576,141.3548]},
-  tbdDinner:    {name:"Dinner near hotel (TBD)", ll:[43.0640,141.3542]},
+  sushiDon:     {name:"Sushi-Don 札幌海鮮丼専門店 すしどんぶり (Minami3 Nishi5)", ll:[43.0561,141.3514]},
   beams:        {name:"BEAMS Sapporo (Minami1 Nishi3)", ll:[43.0590,141.3532]},
   unitedArrows: {name:"UNITED ARROWS Sapporo (PARCO)", ll:[43.0592,141.3534]},
   modest:       {name:"Modest (Minami2 Nishi3)", ll:[43.0578,141.3536]},
@@ -68,23 +68,20 @@ const DAYS = [
 },
 {
   key:"d2", tab:"Jul 28 Tue", sub:"Zoo + Garaku",
-  emoji:"🦁", date:new Date(2026,6,28), blurb:"Zoo morning, open-run Garaku lunch, Hokkaido Shrine",
+  emoji:"🦁", date:new Date(2026,6,28), blurb:"Garaku open run lunch, then zoo + Hokkaido Shrine",
   title:"Day 2 · Zoo day",
-  note:"Zoo in the morning, then open-run Garaku for lunch — queue right when it opens to beat the crowd. Shaded break at Hokkaido Shrine in the afternoon before heading to Toriton for dinner.",
+  note:"Garaku open run for lunch first — queue before it opens, then head to the zoo in the afternoon. Shaded break at Hokkaido Shrine before dinner at Toriton.",
   stops:[
     {p:"hotel", time:"9:30 AM", label:"Leave hotel"},
-    {p:"maruyamaZoo", time:"10:00–11:30 AM", label:"Maruyama Zoo", desc:"Easy relaxed pace — leave by 11:30 to make it to Garaku for lunch", legs:[
-      {mode:"subway", line:"Sapporo Sta. (Namboku Line) → transfer to Tozai Line at Odori Sta. → Maruyama-koen Sta. (~10 min)"},
+    {p:"soupcurry", time:"11:00 AM–12:30 PM", label:"Soup Curry Garaku (open run · lunch)", desc:"Priority pick · queue ~10:45 AM before doors open at 11:00 AM · Minami3 Jo-Higashi · lunch hours 11:00 AM – 3:30 PM", legs:[
+      {mode:"subway", line:"Sapporo Sta. (Namboku Line) → Odori Sta. (~4 min)"},
+      {mode:"walk", line:"Walk (~8 min)"}
+    ]},
+    {p:"maruyamaZoo", time:"1:00–3:00 PM", label:"Maruyama Zoo", desc:"Easy relaxed afternoon pace", legs:[
+      {mode:"subway", line:"Odori Sta. (Tozai Line) → Maruyama-koen Sta. (~8 min)"},
       {mode:"bus", line:"JR Hokkaido Bus [円15]/[円16] Zoo Line, board at Maruyama Bus Terminal platform 4 → Zoo West Gate (~5 min, ¥210/¥110)"}
     ]},
-    {p:"soupcurry", time:"12:00–1:00 PM", label:"Soup Curry Garaku (open run · lunch)", desc:"Priority pick · queue right when lunch opens · Minami3 Jo-Higashi · lunch hours 11:00 AM – 3:30 PM", legs:[
-      {mode:"bus", line:"Zoo West Gate → Maruyama Bus Terminal (~5 min)"},
-      {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → Odori Sta. → walk ~8 min (~20 min total)"}
-    ]},
-    {p:"hokkaidoJingu", time:"~1:30–3:00 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", legs:[
-      {mode:"subway", line:"Odori Sta. (Tozai Line) → Maruyama-koen Sta. (~8 min)"},
-      {mode:"walk", line:"Walk (~7 min)"}
-    ]},
+    {p:"hokkaidoJingu", time:"~3:15–4:30 PM", label:"Cool-down break: Hokkaido Shrine", desc:"4.3★, 2,100+ reviews · old-growth forest grounds, noticeably shaded/cooler than the street · Rokkatei tea house on the grounds serves warm mochi (Hangan-sama) for a sit-down snack", mode:"walk"},
     {p:"toriton", time:"6:30–7:30 PM", label:"Toriton Sushi Toyohira", desc:"Priority pick · conveyor-belt sushi, fun for a 5-year-old · no reservations taken (walk-in only)", legs:[
       {mode:"walk", line:"Walk back to Maruyama-koen Sta. (~7 min)"},
       {mode:"subway", line:"Maruyama-koen Sta. (Tozai Line) → transfer to Toho Line at Odori Sta. → Gakuen-mae Sta. (~20 min)"},
@@ -121,7 +118,7 @@ const DAYS = [
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
   emoji:"🛍️", date:new Date(2026,6,30), blurb:"Fantasy Kids Resort, then every boutique",
   title:"Day 4 · Menya Saimi + AOAO morning, then full shopping day",
-  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl. Dinner near hotel — TBD.",
+  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl. Dinner at Sushi-Don (reservation 6 PM).",
   stops:[
     {p:"hotel", time:"10:05 AM", label:"Leave hotel"},
     {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:`Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM<br><span style="display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:#8a6a2e;letter-spacing:.02em;">PLAN B (if line is too long)</span><br>① <a href="https://www.google.com/maps/search/?api=1&query=Haruichiya+Sandaime+Menjuku+Sapporo+Misono" target="_blank" rel="noopener">Haruichiya Sandaime Menjuku</a> — across the street · 4.3★/735 reviews · miso ramen<br>② <a href="https://www.google.com/maps/search/?api=1&query=Gomasoba+Yuzuru+Misono+Sapporo" target="_blank" rel="noopener">Gomasoba Yuzuru Misono</a> — ~10 min walk · 4.1★/125 reviews · soba + rice-bowl sets`, mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
@@ -144,8 +141,8 @@ const DAYS = [
     {p:"thread", time:"4:39–4:54 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
     {p:"garage69", time:"4:55–5:10 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
     {p:"moonrise", time:"5:10–5:25 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
-    {p:"tbdDinner", time:"~6:00–7:30 PM", label:"Dinner near hotel (TBD)", desc:"TBD — dinner spot near the hotel to be decided · short walk or taxi from the shopping area", mode:"walk"},
-    {p:"hotel", time:"~7:45 PM", label:"Back to hotel", desc:"Short walk back from dinner", mode:"walk"}
+    {p:"sushiDon", time:"6:00–7:30 PM", label:"Sushi-Don すしどんぶり", desc:"Reservation confirmed · Karakusa Hotel 1F, Minami3 Nishi5 · Tanukikoji side entrance · kaisendon (seafood rice bowl) · ~3 min walk east from Moonrise", mode:"walk"},
+    {p:"hotel", time:"~7:45 PM", label:"Back to hotel", desc:"~10 min walk north (≈750m)", mode:"walk"}
   ]
 },
 {
@@ -176,7 +173,7 @@ const modeColor = {walk:"#4f6b58", subway:"#5c4d8a", bus:"#5c4d8a", jr:"#5c4d8a"
 const CATEGORY = {
   hotel:"hotel",
   jingiskan:"meal", toriton:"meal", ramen:"meal", soupcurry:"meal", junpei:"meal",
-  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", tbdDinner:"meal",
+  rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", sushiDon:"meal",
   airport:"flight",
   aoao:"kid", maruyamaZoo:"kid", shiroiKoibito:"kid", scienceCtr:"kid", fantasyKids:"kid",
   stellar:"shopping",
