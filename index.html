@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Sapporo Family Itinerary · Jul 27–31</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="map-dock">
+    <nav class="days" id="dayNav"></nav>
+    <div id="map"></div>
+    <div class="legend">
+      <span><i class="dashed" style="border-color:var(--walk)"></i>Walk</span>
+      <span><i style="border-color:var(--subway)"></i>Transit</span>
+      <span><i style="border-color:var(--tour); opacity:.85"></i>Tour</span>
+      <span style="margin-left:auto; opacity:.7;">tap a stop ↓</span>
+    </div>
+  </div>
+
+  <div class="panel" id="panel"></div>
+
+  <footer class="note">
+    Map coordinates are close approximations to show travel flow, not turn-by-turn directions — double check routes in Google Maps before you go. Timing assumes an easy pace for a 5-year-old.
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

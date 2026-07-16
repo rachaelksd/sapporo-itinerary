@@ -1,0 +1,116 @@
+﻿  :root{
+    --ink:#1f2b2e;
+    --paper:#f6f3ea;
+    --paper-deep:#ece6d4;
+    --lavender:#7b6ba8;
+    --lavender-deep:#5c4d8a;
+    --moss:#4f6b58;
+    --clay:#b5573f;
+    --line:#d9d2bd;
+    --walk:#4f6b58;
+    --subway:#5c4d8a;
+    --bus:#b5573f;
+    --tour:#8a8a8a;
+    --cat-meal:#8e44ad;
+    --cat-hotel:#c0392b;
+    --cat-kid:#2e8b57;
+    --cat-shopping:#2f6fa8;
+    --cat-other:#8a8a8a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:"Pretendard","Noto Sans KR",-apple-system,sans-serif;margin:0;}
+
+  .app{max-width:720px;margin:0 auto;min-height:100vh;background:var(--paper);}
+
+  .map-dock{
+    position:sticky; top:0; z-index:20; background:var(--paper);
+    isolation:isolate; box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+
+  nav.days{
+    display:grid; grid-template-columns:repeat(5, 1fr); gap:5px; padding:10px 10px;
+    background:var(--paper); border-bottom:1px solid var(--line);
+  }
+  .day-pill{
+    padding:7px 2px; border-radius:999px; border:1px solid var(--line);
+    background:#fff; font-size:11.5px; font-weight:600; color:#6b6b60; cursor:pointer;
+    white-space:nowrap; transition:all .15s ease;
+    display:flex; align-items:center; justify-content:center; gap:3px;
+  }
+  .day-pill .emoji{font-size:13px;}
+  .day-pill.active{background:var(--lavender-deep); color:#fff; border-color:var(--lavender-deep);}
+
+  .swipe-hint{
+    text-align:center; font-size:10.5px; color:#8a8a7a; padding:5px 0;
+    background:var(--paper);
+  }
+
+  #map{width:100%; height:34vh; min-height:220px; position:relative; isolation:isolate;}
+
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(92,77,138,.55);}
+    70%{box-shadow:0 0 0 14px rgba(92,77,138,0);}
+    100%{box-shadow:0 0 0 0 rgba(92,77,138,0);}
+  }
+  .pulse-marker{ z-index:1000 !important; }
+  .pulse-marker > div{
+    animation:pulseRing 1.1s ease-out infinite;
+    transform:scale(1.25);
+    transition:transform .2s ease;
+  }
+
+  .legend{
+    display:flex; gap:12px; padding:5px 14px 8px; font-size:10.5px; color:#5b5b52;
+    background:var(--paper); flex-wrap:wrap; align-items:center;
+  }
+  .legend span{display:inline-flex; align-items:center; gap:4px;}
+  .legend i{width:20px; height:0; display:inline-block; border-top-width:3px; border-top-style:solid;}
+  .legend i.dashed{border-top-style:dashed;}
+
+  .panel{padding:16px 18px 40px;}
+  .day-title{display:flex; align-items:baseline; gap:8px; margin-bottom:3px;}
+  .day-title h2{font-size:19px;}
+  .day-title .badge{
+    font-size:11px; font-weight:700; color:#fff; background:var(--moss);
+    padding:2px 8px; border-radius:5px;
+  }
+  .day-note{font-size:12.5px; color:#6b6b60; margin-bottom:16px; line-height:1.5;}
+
+  .stop{
+    transition:background .2s ease;
+  }
+  .stop.highlighted{background:#efeaf7;}
+  .stop-row{
+    display:flex; gap:12px; padding:10px 0; align-items:flex-start; cursor:pointer;
+  }
+  .stop .num{
+    flex:0 0 26px; height:26px; border-radius:50%; background:var(--lavender);
+    color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;
+    flex-direction:column; line-height:1; gap:1px;
+  }
+  .stop .num .n{font-size:11px;}
+  .stop .num .icon{font-size:9px;}
+  .stop .body{flex:1; min-width:0;}
+  .stop .time{font-size:11px; font-weight:700; color:var(--lavender-deep); letter-spacing:.03em;}
+  .stop .place{font-size:14.5px; font-weight:700; margin-top:1px;}
+  .stop .desc{font-size:12.5px; color:#5b5b52; line-height:1.4; margin-top:3px;}
+
+  .connector{
+    display:flex; align-items:stretch; gap:8px;
+    margin:7px 0 7px 13px;
+  }
+  .connector .tick{ flex:0 0 auto; width:0; border-left:2px solid var(--line); margin:2px 0; }
+  .connector .chipstack{ display:flex; flex-direction:column; gap:4px; padding:2px 0; }
+  .chip{
+    font-size:10.5px; font-weight:600; line-height:1.45; letter-spacing:.01em;
+    padding:4px 10px; border-radius:8px; max-width:fit-content;
+  }
+  .chip.walk{ background:#e7eee8; color:var(--moss); }
+  .chip.transit{ background:#eae5f3; color:var(--lavender-deep); }
+  .chip.tour{ background:#eeede8; color:#6b6b60; }
+
+  footer.note{
+    padding:14px 18px 30px; font-size:11.5px; color:#8a8a7a; border-top:1px solid var(--line);
+    line-height:1.6;
+  }
