@@ -32,6 +32,8 @@ const P = {
   iwamizawaSA:  {name:"Iwamizawa Highway rest stop", ll:[43.1948,141.8028]},
   kapital:      {name:"Kapital (Minami2 Nishi1)", ll:[43.0576,141.3548]},
   sushiDon:     {name:"Sushi-Don 札幌海鮮丼専門店 すしどんぶり (Minami3 Nishi5)", ll:[43.0561,141.3514]},
+  northman:     {name:"Northman 大丸札幌店 (Daimaru Sapporo B1F)", ll:[43.0683,141.3498]},
+  kinotoyaBake: {name:"KINOTOYA BAKE ポールタウン店 (Minami2 Nishi3)", ll:[43.0588,141.3530]},
   beams:        {name:"BEAMS Sapporo (Minami1 Nishi3)", ll:[43.0590,141.3532]},
   unitedArrows: {name:"UNITED ARROWS Sapporo (PARCO)", ll:[43.0592,141.3534]},
   modest:       {name:"Modest (Minami2 Nishi3)", ll:[43.0578,141.3536]},
@@ -53,16 +55,17 @@ const DAYS = [
   key:"d1", tab:"Jul 27 Mon", sub:"Arrival",
   emoji:"🍖", date:new Date(2026,6,27), blurb:"Land, check in, Genghis Khan BBQ dinner",
   title:"Day 1 · Arrival & first dinner",
-  note:"Flight lands 1:25 PM. After check-in there's enough time for a quick shopping run — Stellar Place is steps from the hotel, then south to Kapital before walking to dinner.",
+  note:"Flight lands 1:25 PM. After check-in: Stellar Place for shopping, then Northman at Daimaru B1F (3 min walk, same building), then south to Kapital before dinner.",
   stops:[
     {p:"airport", time:"1:25 PM", label:"Land — KE765 (ICN→CTS)", desc:"New Chitose Airport, Terminal I (International) · seat 55D"},
     {p:"hotel", time:"~3:00 PM", label:"Hotel check-in", desc:"Just south of Sapporo Station — 8 min walk to Odori, 2 min to the subway", legs:[
       {mode:"jr", line:"New Chitose Airport → Sapporo Sta. (JR Rapid Airport, ~40 min)"},
       {mode:"walk", line:"Walk (~8 min)"}
     ]},
-    {p:"stellar", time:"~3:30–5:00 PM", label:"Shopping: Stellar Place", desc:"Shiki Marche, MARKEY'S, Bshop, ADAM ET ROPE · 2 min walk from hotel · grab Kitakaro pastries at Daimaru B1 on the way", mode:"walk"},
-    {p:"kapital", time:"~5:15–5:45 PM", label:"Kapital (maybe)", desc:"Minami2 Nishi1 · ~14 min walk south from Stellar · skip if tired after the flight", mode:"walk"},
-    {p:"jingiskan", time:"7:00 PM", label:"Aratanaru Bonz Susukino (Genghis Khan BBQ)", desc:"Reservation confirmed · ~5 min walk from Kapital, or ~13 min walk from hotel", mode:"walk"},
+    {p:"stellar", time:"~3:30–4:30 PM", label:"Shopping: Stellar Place", desc:"Shiki Marche, MARKEY'S, Bshop, ADAM ET ROPE · 2 min walk from hotel", mode:"walk"},
+    {p:"northman", time:"~4:30–4:45 PM", label:"Northman 大丸札幌店", desc:"Hokkaido classic pie + red bean + Nama Northman (fresh cream) — only at Daimaru Sapporo · Daimaru B1F, 3 min walk from Stellar Place · 10:00–20:00", mode:"walk"},
+    {p:"kapital", time:"~5:00–5:45 PM", label:"Kapital", desc:"Minami2 Nishi1 · ~14 min walk south from Daimaru", mode:"walk"},
+    {p:"jingiskan", time:"7:00 PM", label:"Aratanaru Bonz Susukino (Genghis Khan BBQ)", desc:"Reservation confirmed · ~5 min walk from Kapital", mode:"walk"},
     {p:"hotel", time:"~9:00 PM", label:"Back to hotel", desc:"Maybe a short stroll through Tanukikoji if energy allows, then rest", mode:"walk"}
   ]
 },
@@ -117,31 +120,29 @@ const DAYS = [
 },
 {
   key:"d4", tab:"Jul 30 Thu", sub:"Shopping day (all stores)",
-  emoji:"🛍️", date:new Date(2026,6,30), blurb:"Fantasy Kids Resort, then every boutique",
-  title:"Day 4 · Menya Saimi + AOAO morning, then full shopping day",
-  note:"Queue for Menya Saimi before opening, then cool down at AOAO before shopping. Take an indoor break at Donguri Bakery midway through the crawl. Dinner at Sushi-Don (reservation 6 PM).",
+  emoji:"🛍️", date:new Date(2026,6,30), blurb:"Stellar + Kitakaro, AOAO, SAMURAI lunch, full boutique crawl",
+  title:"Day 4 · SAMURAI lunch + full shopping day",
+  note:"Start at Stellar Place and grab Kitakaro at Daimaru, then cool down at AOAO. Rojiura Curry SAMURAI for lunch (opens noon, walk-in only). Full boutique crawl in the afternoon — KINOTOYA BAKE underground Pole Town for the midpoint AC break. Dinner at Sushi-Don (reservation 6 PM).",
   stops:[
-    {p:"hotel", time:"10:05 AM", label:"Leave hotel"},
-    {p:"menyaSaimi", time:"10:30–11:15 AM", label:"Menya Saimi (open-run)", desc:`Priority pick · miso ramen · Cash only · Queue by ~10:30 · lunch only, closes 3:15 PM<br><span style="display:inline-block;margin-top:5px;font-size:11px;font-weight:700;color:#8a6a2e;letter-spacing:.02em;">PLAN B (if line is too long)</span><br>① <a href="https://www.google.com/maps/search/?api=1&query=Haruichiya+Sandaime+Menjuku+Sapporo+Misono" target="_blank" rel="noopener">Haruichiya Sandaime Menjuku</a> — across the street · 4.3★/735 reviews · miso ramen<br>② <a href="https://www.google.com/maps/search/?api=1&query=Gomasoba+Yuzuru+Misono+Sapporo" target="_blank" rel="noopener">Gomasoba Yuzuru Misono</a> — ~10 min walk · 4.1★/125 reviews · soba + rice-bowl sets`, mode:"subway", line:"Sapporo Sta. (Toho Line) → direct, no transfer → Misono Sta. (~18 min)"},
-    {p:"aoao", time:"11:45 AM–12:45 PM", label:"AOAO SAPPORO", desc:"Fully indoor & air-conditioned — a cool-down break before the shopping crawl", legs:[
-      {mode:"subway", line:"Misono Sta. (Toho Line) → direct, no transfer → Odori Sta. (~18 min)"},
+    {p:"hotel", time:"10:00 AM", label:"Leave hotel"},
+    {p:"stellar", time:"10:15–11:30 AM", label:"Stellar Place: Shiki Marche, MARKEY'S, Bshop", desc:"~25 min each · 2 min walk from hotel", mode:"walk"},
+    {p:"adamEtRope", time:"11:30–11:45 AM", label:"ADAM ET ROPE WILD LIFE TAILOR", desc:"Stellar Place East 2F — same building, no extra travel"},
+    {p:"kitakaroDaimaru", time:"11:45 AM–12:00 PM", label:"Snack: Kitakaro (Daimaru Sapporo B1F)", desc:"Priority pick · pastries/soft-serve · ~3 min walk from Stellar Place", mode:"walk"},
+    {p:"aoao", time:"12:15–1:15 PM", label:"AOAO SAPPORO", desc:"Fully indoor & air-conditioned — cool-down before the shopping crawl", legs:[
+      {mode:"subway", line:"Sapporo Sta. (Namboku Line) → Odori Sta. (~4 min)"},
       {mode:"walk", line:"Walk (~3 min)"}
     ]},
-    {p:"stellar", time:"1:00–1:45 PM", label:"Stellar Place: Shiki Marche, MARKEY'S, Bshop", desc:"~15 min each", legs:[
-      {mode:"subway", line:"Odori Sta. (Namboku Line) → direct, no transfer → Sapporo Sta. (~4 min)"}
-    ]},
-    {p:"adamEtRope", time:"1:45–2:00 PM", label:"ADAM ET ROPE WILD LIFE TAILOR", desc:"Stellar Place East 2F — same building, no extra travel"},
-    {p:"kitakaroDaimaru", time:"2:05–2:20 PM", label:"Snack: Kitakaro (Daimaru Sapporo B1F)", desc:"Priority pick · pastries/soft-serve · ~3 min walk from Stellar Place", mode:"walk"},
-    {p:"kapital", time:"2:35–2:50 PM", label:"Kapital", desc:"Minami2 Nishi1 · closed every Tuesday, open today · ~14 min walk (≈900m)", mode:"walk"},
-    {p:"beams", time:"2:55–3:10 PM", label:"BEAMS Sapporo", desc:"Minami1 Nishi3 · ~4 min walk", mode:"walk"},
-    {p:"unitedArrows", time:"3:12–3:27 PM", label:"UNITED ARROWS Sapporo", desc:"Sapporo PARCO, right next to BEAMS · ~2 min walk", mode:"walk"},
-    {p:"modest", time:"3:29–3:44 PM", label:"Modest", desc:"Minami2 Nishi3, near AOAO · ~2 min walk", mode:"walk"},
-    {p:"humanmade", time:"3:46–4:01 PM", label:"Human Made Sapporo", desc:"THE KNOT Sapporo, one block south · ~2 min walk", mode:"walk"},
-    {p:"donguriBakery", time:"4:03–4:18 PM", label:"AC break: Donguri Bakery Odori", desc:"Indoor, air-conditioned — pastry + cool-down stop · ~2 min walk", mode:"walk"},
-    {p:"maw", time:"4:20–4:35 PM", label:"MaW", desc:"Minami2 Nishi5, continuing west · ~4 min walk", mode:"walk"},
-    {p:"thread", time:"4:39–4:54 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
-    {p:"garage69", time:"4:55–5:10 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
-    {p:"moonrise", time:"5:10–5:25 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
+    {p:"rojiuraCurry", time:"1:30–2:30 PM", label:"Rojiura Curry SAMURAI Sakura (lunch)", desc:"Priority pick · soup curry · walk-in only · Tiara36 2F, Minami3 Nishi6 · opens 12:00, L.O. 15:00 · Cash + PayPay · ~8 min walk from AOAO", mode:"walk"},
+    {p:"kapital", time:"2:50–3:05 PM", label:"Kapital", desc:"Minami2 Nishi1 · ~8 min walk from SAMURAI", mode:"walk"},
+    {p:"beams", time:"3:10–3:25 PM", label:"BEAMS Sapporo", desc:"Minami1 Nishi3 · ~4 min walk", mode:"walk"},
+    {p:"unitedArrows", time:"3:27–3:42 PM", label:"UNITED ARROWS Sapporo", desc:"Sapporo PARCO, right next to BEAMS · ~2 min walk", mode:"walk"},
+    {p:"modest", time:"3:44–3:59 PM", label:"Modest", desc:"Minami2 Nishi3 · ~2 min walk", mode:"walk"},
+    {p:"humanmade", time:"4:01–4:16 PM", label:"Human Made Sapporo", desc:"THE KNOT Sapporo, one block south · ~2 min walk", mode:"walk"},
+    {p:"kinotoyaBake", time:"4:18–4:38 PM", label:"AC break: KINOTOYA BAKE ポールタウン店", desc:"Underground Pole Town — fully air-conditioned · freshly baked cheese tart + soft cream · Minami2 Nishi3 · ~2 min walk", mode:"walk"},
+    {p:"maw", time:"4:40–4:55 PM", label:"MaW", desc:"Minami2 Nishi5, continuing west · ~4 min walk", mode:"walk"},
+    {p:"thread", time:"4:59–5:14 PM", label:"thread", desc:"Minami3 Nishi7 · ~4 min walk", mode:"walk"},
+    {p:"garage69", time:"5:15–5:30 PM", label:"GARAGE69", desc:"Minami3 Nishi8, same block as thread · ~1 min walk", mode:"walk"},
+    {p:"moonrise", time:"5:30–5:45 PM", label:"Moonrise", desc:"Same building as GARAGE69", mode:"walk"},
     {p:"sushiDon", time:"6:00–7:30 PM", label:"Sushi-Don すしどんぶり", desc:"Reservation confirmed · Karakusa Hotel 1F, Minami3 Nishi5 · Tanukikoji side entrance · kaisendon (seafood rice bowl) · ~3 min walk east from Moonrise", mode:"walk"},
     {p:"hotel", time:"~7:45 PM", label:"Back to hotel", desc:"~10 min walk north (≈750m)", mode:"walk"}
   ]
@@ -175,6 +176,7 @@ const CATEGORY = {
   hotel:"hotel",
   jingiskan:"meal", toriton:"meal", ramen:"meal", soupcurry:"meal", junpei:"meal",
   rojiuraCurry:"meal", menyaSaimi:"meal", kitakaroDaimaru:"meal", sushiDon:"meal",
+  northman:"break", kinotoyaBake:"break",
   airport:"flight",
   aoao:"kid", maruyamaZoo:"kid", shiroiKoibito:"kid", scienceCtr:"kid", fantasyKids:"kid",
   stellar:"shopping",
